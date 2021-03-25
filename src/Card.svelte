@@ -8,6 +8,7 @@
       link: "see github",
       href: "https://github.com/openst/openst-contracts",
       backgroundColor: "hsla(255.1578947368421, 42.60%, 56.27%, 1.00)",
+      position: "left",
     },
     {
       title: "Wallet Recovery",
@@ -16,6 +17,7 @@
       link: "see github",
       href: "https://github.com/OpenST/ost-wallet-sdk-android",
       backgroundColor: "hsla(337, 67.55%, 51.78%, 1.00)",
+      position: "right",
     },
     {
       title: "OST chain",
@@ -24,6 +26,7 @@
       link: "see github",
       href: "https://github.com/openst/mosaic-contracts",
       backgroundColor: " hsla(226, 83.34%, 62.11%, 1.00)",
+      position: "bleft",
     },
     {
       title: "OpenST Platform",
@@ -32,6 +35,7 @@
       link: "see github",
       href: "https://github.com/openst/platform-api",
       backgroundColor: "hsla(88, 77.75%, 53.65%, 1.00)",
+      position: "bright",
     },
   ];
 </script>
@@ -45,7 +49,9 @@
   </h3>
   <div>
     {#each cards as card}
-      <article style="background-color: {card.backgroundColor}">
+      <article
+        style="background-color: {card.backgroundColor}; grid-area: {card.position}"
+      >
         <h4>{card.title}</h4>
         <p>{card.description}</p>
         <a href={card.href}>{card.link}</a>
@@ -74,24 +80,37 @@
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 36px;
-    line-height: 50px;
-    font-weight: 400;
+    font-size: 30px;
+    line-height: 46px;
+    letter-spacing: 2px;
+    font-weight: 300;
   }
   article {
     width: 300px;
     height: 300px;
-    margin: 0px auto 30px;
+    margin: 30px 30px;
+    padding: 0px 30px;
     border-style: solid;
     border-width: 1px;
+    color: white;
     border-color: rgba(207, 205, 205, 0.66);
     border-radius: 7px;
     background-color: transparent;
     box-shadow: 4px 4px 8px 2px rgb(0 0 0 / 21%);
   }
+  a {
+    color: white;
+  }
+  p {
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+    line-height: 30px;
+  }
   div {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-areas:
+      "left right"
+      "bleft bright";
   }
 </style>
