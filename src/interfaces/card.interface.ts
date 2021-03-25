@@ -4,5 +4,4 @@ export interface Card {
   link: string;
   href: string;
   backgroundColor: string;
-  position: string;
 }

@@ -18,6 +18,7 @@
     padding-bottom: 40px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     background-color: #edf8ff;
     text-align: center;
   }

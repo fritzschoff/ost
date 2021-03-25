@@ -8,7 +8,6 @@
       link: "see github",
       href: "https://github.com/openst/openst-contracts",
       backgroundColor: "hsla(255.1578947368421, 42.60%, 56.27%, 1.00)",
-      position: "left",
     },
     {
       title: "Wallet Recovery",
@@ -17,7 +16,6 @@
       link: "see github",
       href: "https://github.com/OpenST/ost-wallet-sdk-android",
       backgroundColor: "hsla(337, 67.55%, 51.78%, 1.00)",
-      position: "right",
     },
     {
       title: "OST chain",
@@ -26,7 +24,6 @@
       link: "see github",
       href: "https://github.com/openst/mosaic-contracts",
       backgroundColor: " hsla(226, 83.34%, 62.11%, 1.00)",
-      position: "bleft",
     },
     {
       title: "OpenST Platform",
@@ -35,7 +32,6 @@
       link: "see github",
       href: "https://github.com/openst/platform-api",
       backgroundColor: "hsla(88, 77.75%, 53.65%, 1.00)",
-      position: "bright",
     },
   ];
 </script>
@@ -50,7 +46,7 @@
   <div>
     {#each cards as card}
       <article
-        style="background-color: {card.backgroundColor}; grid-area: {card.position}"
+        style="background-color: {card.backgroundColor};"
       >
         <h4>{card.title}</h4>
         <p>{card.description}</p>
@@ -75,7 +71,6 @@
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-
   h3 {
     text-align: center;
     margin-top: 10px;
@@ -85,9 +80,13 @@
     letter-spacing: 2px;
     font-weight: 300;
   }
+  h4 {
+    font-weight: 300;
+    font-size: 30px;
+  }
   article {
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 350px;
     margin: 30px 30px;
     padding: 0px 30px;
     border-style: solid;
@@ -100,6 +99,7 @@
   }
   a {
     color: white;
+    text-decoration: underline;
   }
   p {
     color: #fff;
@@ -108,9 +108,9 @@
     line-height: 30px;
   }
   div {
-    display: grid;
-    grid-template-areas:
-      "left right"
-      "bleft bright";
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
   }
 </style>
